@@ -4,18 +4,18 @@
 
 This code is a Node.js server that receives POST requests to add links to a JSON file and responds with a success message, and a GET request to retrieve the JSON file with the links. It also pings the URLs in the JSON file every 14 minutes to check if they are still up.
 
-## Why this project
-
-Serverless architecture is a cloud computing model where the cloud provider manages the infrastructure, allowing developers to focus on writing code without having to worry about server maintenance. In this model, the code runs in stateless containers that are created and executed only when triggered by an event or request, rather than continuously running on a server.
-
-The project in question aims to eliminate the problem of **"cold starts"** , which refers to the delay in the initial execution of a function due to the need to spin up a new container. By implementing strategies such as pre-warming containers or utilizing functions that are more frequently triggered, developers can ensure that their serverless functions are always available and responsive, without the need for manual server management.
-
 ## Tech Stack
 
 1. **Node.js: A JavaScript runtime environment that executes JavaScript code outside of a web browser.**
 2. **Fastify: A fast and low overhead web framework for Node.js.**
 3. **fs: A Node.js module that provides an API for interacting with the file system.**
 4. **https: A Node.js module that provides an API for making HTTPS requests.**
+
+## Why this project
+
+Serverless architecture is a cloud computing model where the cloud provider manages the infrastructure, allowing developers to focus on writing code without having to worry about server maintenance. In this model, the code runs in stateless containers that are created and executed only when triggered by an event or request, rather than continuously running on a server.
+
+The project in question aims to eliminate the problem of **"cold starts"** , which refers to the delay in the initial execution of a function due to the need to spin up a new container. By implementing strategies such as pre-warming containers or utilizing functions that are more frequently triggered, developers can ensure that their serverless functions are always available and responsive, without the need for manual server management.
 
 ## Approach
 
