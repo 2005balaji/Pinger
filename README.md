@@ -1,6 +1,6 @@
 # Pinger
 
-##About:
+## About:
 
 This code is a Node.js server that receives POST requests to add links to a JSON file and responds with a success message, and a GET request to retrieve the JSON file with the links. It also pings the URLs in the JSON file every 14 minutes to check if they are still up.
 
@@ -15,7 +15,7 @@ The project in question aims to eliminate the problem of **"cold starts"** , whi
 1. **Node.js: A JavaScript runtime environment that executes JavaScript code outside of a web browser.**
 2. **Fastify: A fast and low overhead web framework for Node.js.**
 3. **fs: A Node.js module that provides an API for interacting with the file system.**
-4 .**https: A Node.js module that provides an API for making HTTPS requests.**
+4. **https: A Node.js module that provides an API for making HTTPS requests.**
 
 ## Approach
 
