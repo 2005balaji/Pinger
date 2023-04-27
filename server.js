@@ -1,16 +1,31 @@
 const https = require('https');
 
-// Replace the URL with the link you want to ping
-const url = 'https://slippy.onrender.com/';
+const urls = [
+  'https://slippy.onrender.com/',
+  'https://google.com/',
+  // Add more URLs here
+];
 
-// Define the ping function
-function ping() {
-  https.get(url, (res) => {
-    console.log(`Ping to ${url} succeeded with status code ${res.statusCode}`);
-  }).on('error', (err) => {
-    console.error(`Ping to ${url} failed with error: ${err.message}`);
+async function ping(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      console.log(`Ping to ${url} succeeded with status code ${res.statusCode}`);
+      resolve();
+    }).on('error', (err) => {
+      console.error(`Ping to ${url} failed with error: ${err.message}`);
+      reject(err);
+    });
   });
 }
 
-// Schedule the ping function to run every 14 minutes
-setInterval(ping, 14 * 60 * 1000);
+let index = 0;
+
+setInterval(async () => {
+  const url = urls[index];
+  try {
+    await ping(url);
+  } catch (error) {
+    console.error(`Failed to ping ${url}: ${error}`);
+  }
+  index = (index + 1) % urls.length;
+}, 14 * 60 * 1000);
